@@ -5,7 +5,8 @@
 <entity_class name="playerMale">
 	<property name="EntityType" value="Player"/>
 	<property name="ModelType" value="UMA"/>
-	<property name="Class" value="EntityPlayer"/>
+	<!-- <property name="Class" value="EntityPlayer"/> OLD CLASS -->
+	<property name="Class" value="EntityPlayerSDX, Mods"/>
 	<property name="Prefab" value="Player"/>
 	<property name="Mesh" value="Player/Male/player_maleRagdoll"/>
 	<property name="PhysicsBody" value="Player"/>
@@ -42,6 +43,14 @@
 	<property name="LegsExplosionDamageMultiplier" value="1"/>
 	<property name="ArmsExplosionDamageMultiplier" value="1"/>
 	<property name="HeadExplosionDamageMultiplier" value="1"/>
+	<!-- Turns on one block crouch -->
+    <property name="OneBlockCrouch" value="true" />
+    <!-- Turns on damage when hitting things with your bare hands -->
+    <property name="SoftHands" value="false" />
+    <!-- take a stamina hit for jumping -->
+    <property name="JumpingDrain" value="true" />
+    <!-- <property name="MaxEncumbrance" value="10000" /> -->
+    <property name="UseEncumbrance" value="false" />
 </entity_class>
 
 <!-- Player Female -->
@@ -72,7 +81,8 @@
 	<property name="ModelType" value="Standard"/>
 	<property name="HasRagdoll" value="true"/>
 	<property name="Prefab" value="NPC"/>
-	<property name="Class" value="EntityZombie"/>
+	<!-- <property name="Class" value="EntityZombie"/> -->
+	<property name="Class" value="EntityZombieSDX, Mods"/>
 	<property name="Parent" value="Enemies"/>
 	<property name="PhysicsBody" value="zombieStandard"/>
 	<property name="Faction" value="undead"/>
@@ -128,7 +138,7 @@
 	<property name="SoundAttack" value="Enemies/Base_Zombie_Male/zombiemaleattack"/>
 	<property name="SoundSleeperSense" value="sleepersense"/>
 	<property name="SoundSleeperBackToSleep" value="sleeperbacktosleep"/>
-	<property name="TimeStayAfterDeath" value="30000"/>
+	<property name="TimeStayAfterDeath" value="3600"/>
 	<property name="AttackTimeoutDay" value="1.5"/>
 	<property name="AttackTimeoutNight" value="1.1"/>
 	<property name="LootListOnDeath" value="15"/>
@@ -165,6 +175,12 @@
 	<property name="ArmsExplosionDamageMultiplier" value="1"/>
 	<property name="HeadExplosionDamageMultiplier" value="1"/>
 	<property name="ChestExplosionDamageMultiplier" value="1"/>
+	<property name="HeadShots" value="false" />
+    <property name="RandomSpeeds" value="true" />
+    <property name="RandomSize" value="true" />
+    <!-- Allows the zombies to go to sleep when idle. -->
+    <property name="IdleSleep" value="false" />
+    <property name="SleeperPose" value="1" />
 </entity_class>
 
 <!-- Feral Daryl -->
@@ -190,6 +206,8 @@
 	<property name="LowerArmDismemberThreshold" value="0.063"/>
 	<property name="UpperArmDismemberThreshold" value="0.063"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
+	<property name="RandomSpeeds" value="true" />
+    <property name="RandomSize" value="false" />
 </entity_class>
 <entity_class name="zombieWightFeralRadiated" extends="zombieWightFeral">
 	<property name="MaxHealth" value="1125"/>
@@ -226,6 +244,8 @@
 	<property name="HeadExplosionDamageMultiplier" value=".85"/>
 	<property name="ChestExplosionDamageMultiplier" value=".85"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
+	<property name="RandomSpeeds" value="true" />
+    <property name="RandomSize" value="false" />
 </entity_class>
 
 
@@ -430,6 +450,7 @@
 	<property name="HasDeathAnim" value="true"/>
 	<property name="LootListOnDeath" value="38"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
+	<property name="RandomSpeeds" value="true" />
 </entity_class>
 <entity_class name="zombieScreamerFeral" extends="zombieScreamer">
 	<property name="HandItem" value="handZombieFeral"/>
@@ -439,6 +460,7 @@
 	<property name="NightApproachSpeed" value="1.35"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
+	<property name="RandomSpeeds" value="true" />
 </entity_class>
 
 
@@ -461,6 +483,7 @@
 	<property name="NightApproachSpeed" value="1.35"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
+	<property name="RandomSpeeds" value="true" />
 </entity_class>
 
 
@@ -577,7 +600,8 @@
 	<property name="AvatarController" value="AvatarZombie01Controller"/>
 	<property name="HandItem" value="handZombie02"/>
 	<property name="MaxHealth" value="120"/>
-	<property name="Class" value="EntityZombieCrawl"/>
+	<!-- <property name="Class" value="EntityZombieCrawl"/> -->
+	<property name="Class" value="EntityZombieCrawlSDX, Mods"/>
 	<property name="WalkType" value="4"/>
 	<property name="CanClimbLadders" value="false"/>
 	<property name="RotateToGround" value="true"/>
@@ -636,6 +660,8 @@
 	<property name="SoundFootstepModifier" value="Enemies/Snow_Zombie_Male/zombiesnowfootstep"/>
 	<property name="HandItem" value="handZombieStrong"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
+	<property name="RandomSpeeds" value="true" />
+	<property name="RandomSize" value="false" />
 </entity_class>
 <entity_class name="zombieSnowFeral" extends="zombieSnow">
 	<property name="HandItem" value="handZombieStrongFeral"/>
@@ -681,6 +707,7 @@
 	<property name="KnockdownProneDamageThreshold" value="0"/>
 	<property name="KnockdownKneelDamageThreshold" value="0"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
+	<property name="RandomSpeeds" value="true" />
 </entity_class>
 <entity_class name="zombieSpiderFeral" extends="zombieSpider">
 	<property name="HandItem" value="handZombie02Feral"/>
@@ -692,6 +719,10 @@
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
 </entity_class>
+<entity_class name="zombieSpiderRyanStanding" extends="zombieSpider">
+    <property name="WalkType" value="2"/>
+    <property name="CanClimbVertical" value="false"/>
+</entity_class>
 <entity_class name="zombieSpiderFeralRadiated" extends="zombieSpiderFeral">
 	<property name="HandItem" value="handZombie02Feral"/>
 	<property name="MaxHealth" value="450"/>
@@ -701,6 +732,7 @@
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/rad_eye"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
 	<property name="Buffs" value="zombieRadiatedBuff40"/>
+	<property name="RandomSpeeds" value="true" />
 </entity_class>
 
 
@@ -795,7 +827,8 @@
 <!-- Zombie RCMP -->
 <entity_class name="zombieFatCop" extends="zombieTemplateMale">
 	<property name="Mesh" value="Zombies/zombieStandardCopRagdoll"/>
-	<property name="Class" value="EntityZombieCop"/>
+	<!-- <property name="Class" value="EntityZombieCop"/> -->
+	<property name="Class" value="EntityZombieCopSDX, Mods"/>
 	<property name="HandItem" value="handZombieCop"/>
 	<property name="WalkType" value="1"/>
 	<property name="RightHandJointName" value="Jaw"/>
@@ -845,6 +878,8 @@
 	<property name="ChestExplosionDamageMultiplier" value="2"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/Z_eye1"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
+	<property name="HeadShots" value="false" />
+    <property name="RandomSpeeds" value="false" />
 </entity_class>
 <entity_class name="zombieFatCopFeral" extends="zombieFatCop">
 	<property name="HandItem" value="handZombieCopFeral"/>
@@ -934,6 +969,8 @@
 	<property name="HandItem" value="handZombieWorker"/>
 	<property name="LootListOnDeath" value="73"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
+	<property name="RandomSpeeds" value="true" />
+	<property name="RandomSize" value="false" />
 </entity_class>
 <entity_class name="zombieSoldierFeral" extends="zombieSoldier">
 	<property name="MaxHealth" value="750"/>
@@ -1032,6 +1069,7 @@
 	<property name="LootListOnDeath" value="83"/>
 	<property name="WalkType" value="7"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
+	<property name="RandomSize" value="false" />
 </entity_class>
 
 
